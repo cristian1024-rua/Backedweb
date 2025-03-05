@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "html",
   "private": true,
   "version": "0.0.0",
@@ -13,5 +14,22 @@
   },
   "dependencies": {
     "mqtt": "^5.10.4"
+=======
+  "name": "practica-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "mqtt": "^5.10.3",
+    "ws": "^8.18.1"
+>>>>>>> a5ec12a (first commit)
   }
 }
