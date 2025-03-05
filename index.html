@@ -1,59 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Blog de turistico de comidas rapidas en Pasto">
-    <meta name="googlebot" content="noindex, nofollow"> 
+    <meta name="googlebot" content="noindex, nofollow">
     <title>Vite App</title>
-    <link rel="stylesheet" href="./src/style.css">
   </head>
-  <body>
-    
+  <body style="background-color: #f4f4f9; color: #333; font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px;">
+
     <!-- Contenido principal -->
-    <main class="main-content">
-      <!-- Artículo destacado -->
-      <article class="post">
-        <section>
-            <h2>Protocolo Http</h2>
-            <button id="btnFetch">Obtener Usuarios Protocolo HTTPS</button>
-            <form id="myForm">
-              <input type="text" id="nombre" placeholder="Nombre">
-              <input type="email" id="email" placeholder="Email">
-              
-              <button type="submit">Enviar</button>
-            </form>
-            
-            <div id="response"></div>
-          </section>
-          
-          <section>
-            <h2>Protocolo Websocket</h2>
+    <main style="display: flex; flex-wrap: wrap; max-width: 1100px; width: 100%; background: #ffffff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); padding: 20px;">
       
-            <button id="btnWebSocket">Comunicacion Web Socket</button>
-            <button id="btnWebSocket2">Comunicacion Web Socket Hora local</button>
-            <div id="messages" style="border: 1px solid #ccc; padding: 10px; height: 200px; overflow-y: auto;"></div>
-
-          
+      <!-- Artículo destacado -->
+      <article style="flex: 2; padding: 20px;">
+        
+        <section style="background: #e3f2fd; padding: 15px; margin-bottom: 20px; border-left: 5px solid #007bff; border-radius: 5px;">
+          <h2 style="color: #007bff;">Protocolo Http</h2>
+          <button id="btnFetch" style="background-color: #007bff; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px;">Obtener Usuarios</button>
+         
+          <form id="myForm">
+            <input type="text" id="nombre" placeholder="Nombre" required style="padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px; margin-top: 5px;">
+            <input type="email" id="email" placeholder="Email" required style="padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px; margin-top: 5px;">
+            <button type="submit" style="background-color: #007bff; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; margin-top: 5px;">Enviar</button>
+          </form>
+         
+          <h3 style="color: #0056b3;">Lista de Usuarios</h3>
+          <div id="response" style="border: 1px solid #ccc; padding: 10px; min-height: 100px; background: #eef4ff; border-radius: 5px;">
+            <ul id="userList"></ul>
+          </div>
+        </section>
+         
+        <section style="background: #e3f2fd; padding: 15px; margin-bottom: 20px; border-left: 5px solid #007bff; border-radius: 5px;">
+          <h2 style="color: #007bff;">Protocolo Websocket</h2>
+          <button id="btnWebSocket" style="background-color: #007bff; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px;">Comunicacion Web Socket</button>
+          <button id="btnWebSocket2" style="background-color: #007bff; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px;">Comunicacion Web Socket Hora local</button>
+          <input type="text" id="wsMessage" placeholder="Escribe un mensaje" style="padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px; margin-top: 5px;">
+          <button id="sendWsMessage" style="background-color: #007bff; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; margin-top: 5px;">Enviar Mensaje</button>
+          <div id="messages" style="border: 1px solid #ccc; padding: 10px; height: 200px; overflow-y: auto; background: #eef4ff; border-radius: 5px;"></div>
+        </section>
+      
       </article>
-
-      <!-- Barra lateral (contenido relacionado) -->
-      <aside class="sidebar">
-          <h4>Articulos</h4>
+ 
+      <!-- Barra lateral -->
+      <aside style="flex: 1; padding: 20px; background: #f8f9fa; border-left: 3px solid #007bff; border-radius: 10px; margin-left: 20px;">
+          <h4 style="color: #007bff;">Artículos</h4>
           <ul>
-              <li><a href="https://aws.amazon.com/es/what-is/distributed-computing/">Qué es la computación distribuida?</a></li>
+              <li><a href="https://aws.amazon.com/es/what-is/distributed-computing/" style="text-decoration: none; color: #0056b3;">¿Qué es la computación distribuida?</a></li>
           </ul>
       </aside>
+    
     </main>
-    <footer class="footer">
+ 
+    <footer style="text-align: center; width: 100%; padding: 10px; background: #007bff; color: white; margin-top: 20px; border-radius: 5px;">
       <p>© 2025 Sistemas Distribuidos.</p>
-      <address>Contacto: <a href="mailto:andres.duartee@campusucc.edu.co">andres.duartee@campusucc.edu.co</a></address>
+      <address>Contacto: <a href="mailto:andres.duartee@campusucc.edu.co" style="color: white;">andres.duartee@campusucc.edu.co</a></address>
     </footer>
-
+ 
     <script src="./src/scripts/geolocalizacion.js" defer></script>
     <script src="./src/scripts/fetchData.js" defer></script>
     <script src="./src/scripts/serverws.js" defer></script>
     <script src="./src/scripts/http.js" defer></script>
+
   </body>
 </html>
